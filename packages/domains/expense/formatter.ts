@@ -1,4 +1,3 @@
-import { capitalize } from '@nc/utils/common';
 import { Expense } from './types';
 
 const publicFields = [
@@ -25,7 +24,7 @@ export function toDKK(amount_in_cents: number): number {
 
 export function format(expense: any): Expense {
   return {
-    merchant_name: capitalize(expense.merchant_name),
+    merchant_name: expense.merchant_name,
     amount_in_cents: expense.amount_in_cents,
     amount_in_dkk: toDKK(expense.amount_in_cents),
     currency: expense.currency,
