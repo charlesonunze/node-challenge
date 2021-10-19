@@ -8,7 +8,7 @@ This challenge has been designed to measure your knowledge of Node.js, Express, 
 
 Your objective is to write this new route to fetch the list of expenses for a given user. Right now that domain is empty, so you'll have to build everything from scratch- but you can look over at the user domain for inspiration. Additionally, we would also like you to write some tests for your route.
 
-Finally, as a bonus objective, try to improve any aspect of this API. It could be to add more TS types, tests, add features, graphql support, etc. 
+Finally, as a bonus objective, try to improve any aspect of this API. It could be to add more TS types, tests, add features, graphql support, etc.
 
 ## Instructions
 
@@ -46,13 +46,24 @@ Make sure that you have a modern version of `yarn` that supports workspaces, the
 yarn test
 ```
 
+For the acceptance test, make sure you create a `challenge_test` database.
+
 The command above will run the following test suites sequentially:
 
-| Test suite | Run command | Description |
--------------|-------------|-------------|
-| Unit | `yarn test:unit` | Simple unit tests. |
-| Mid-level | `yarn test:mid-level` | Small integration tests that integration of small components together.  |
-| Acceptances | `yarn test:acceptance` | Large integration tests, system tests, end-to-end tests. |
-
+| Test suite  | Run command            | Description                                                            |
+| ----------- | ---------------------- | ---------------------------------------------------------------------- |
+| Unit        | `yarn test:unit`       | Simple unit tests.                                                     |
+| Mid-level   | `yarn test:mid-level`  | Small integration tests that integration of small components together. |
+| Acceptances | `yarn test:acceptance` | Large integration tests, system tests, end-to-end tests.               |
 
 Happy hacking 😁!
+
+## Thought Process
+
+- I first setup the user expense domain with help from the user details domain, and added some types as well.
+- I went ahead and implemented the user expense business logic, following the same conventions as the user details domain implementation.
+- I moved the `capitalize` function to be accessible globally because it's a pure function that other domains could use.
+- I now added unit tests for the util functions across domains.
+- Added acceptance tests, updated the dump.sql script, and fixed some errors.
+
+This was fun to work on! It's my first time working on a DDD project and I love it.
