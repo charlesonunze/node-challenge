@@ -1,8 +1,10 @@
 import { Api } from '../../utils/api';
 import { clearDB } from '../../utils/db';
+import { disconnectDB } from '@nc/utils/db';
 
 afterAll(async () => {
   await clearDB();
+  disconnectDB();
 });
 
 describe('User Expense Domain', () => {
