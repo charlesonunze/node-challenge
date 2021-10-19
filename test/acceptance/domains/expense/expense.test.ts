@@ -7,9 +7,9 @@ afterAll(async () => {
   disconnectDB();
 });
 
-describe('User Expense Domain', () => {
+describe('Expense Domain', () => {
   describe('GET /expense/v1/get-user-expenses?userId={:userId}', () => {
-    test('User Expense route should return positively', async () => {
+    test('Expense route should return positively', async () => {
       const res = await Api.get(
         '/expense/v1/get-user-expenses?userId=da140a29-ae80-4f0e-a62d-6c2d2bc8a474'
       )
@@ -18,7 +18,7 @@ describe('User Expense Domain', () => {
 
       expect(typeof res.body).toEqual('string');
       expect(Array.isArray(parsedResponse)).toEqual(true);
-      parsedResponse.forEach((expense) => {
+      parsedResponse.forEach((expense: Record<string, any>) => {
         expect(Object.keys(expense).length).toEqual(5);
         expect(expense).toHaveProperty('merchant_name');
         expect(expense).toHaveProperty('amount_in_dkk');

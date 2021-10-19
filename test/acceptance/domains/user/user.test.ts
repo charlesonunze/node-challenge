@@ -7,9 +7,9 @@ afterAll(async () => {
   disconnectDB();
 });
 
-describe('User Expense Domain', () => {
-  describe('GET /expense/v1/get-user-expenses?userId={:userId}', () => {
-    test('User Expense route should return positively', () => {
+describe('User Domain', () => {
+  describe('GET /user/v1/get-user-details?userId={:userId}', () => {
+    test('User route should return positively', () => {
       return Api.get(
         '/user/v1/get-user-details?userId=3d16547a-79f6-4f62-9034-d3bfb31fb37c'
       )
