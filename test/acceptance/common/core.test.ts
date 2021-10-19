@@ -27,22 +27,22 @@ describe('Given that we have a healthy service', () => {
     });
   });
 
-  // describe('Context', () => {
-  //   test('Should return a unique request id in the headers', () => {
-  //     return Api.get('/')
-  //       .expect(404)
-  //       .then((res) => {
-  //         return expect(res.headers['x-request-id']).not.toBeNull();
-  //       });
-  //   });
+  describe('Context', () => {
+    test('Should return a unique request id in the headers', () => {
+      return Api.get('/')
+        .expect(404)
+        .then((res) => {
+          return expect(res.headers['x-request-id']).not.toBeNull();
+        });
+    });
 
-  //   test('Should forward inbound request ids in the headers', () => {
-  //     return Api.get('/')
-  //       .set('x-request-id', 'abc')
-  //       .expect(404)
-  //       .then((res) => {
-  //         return expect(res.headers['x-request-id']).toEqual('abc');
-  //       });
-  //   });
-  // });
+    test('Should forward inbound request ids in the headers', () => {
+      return Api.get('/')
+        .set('x-request-id', 'abc')
+        .expect(404)
+        .then((res) => {
+          return expect(res.headers['x-request-id']).toEqual('abc');
+        });
+    });
+  });
 });
