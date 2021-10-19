@@ -24,7 +24,7 @@ SET default_with_oids = false;
 -- Name: expenses; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.expenses (
+CREATE TABLE IF NOT EXISTS public.expenses (
     id uuid,
     merchant_name character varying(255),
     amount_in_cents integer,
@@ -41,7 +41,7 @@ CREATE TABLE public.expenses (
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.users (
+CREATE TABLE IF NOT EXISTS public.users (
     id uuid,
     first_name character varying(100),
     last_name character varying(100),
